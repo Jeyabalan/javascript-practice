@@ -83,3 +83,21 @@ console.log(
   `if Two Strings are Anagrams ${str1} and  ${str2}:`,
   checkAnagrams(str1, str2)
 );
+
+// 8. Find the Longest Substring Without Repeating Characters
+function longestStrWithoutRepeat(input) {
+  const array = input
+    .split(' ')
+    .map((a) => a.toLowerCase())
+    .sort((a, b) => b.length - a.length);
+  console.log(array);
+  for (let word of array) {
+    if (firstNonRepeatChar(word)) return word;
+  }
+}
+
+str = 'jeyabalan Hii more test with';
+console.log(
+  `Find the Longest Substring Without Repeating Characters ${str}:`,
+  longestStrWithoutRepeat(str)
+);
