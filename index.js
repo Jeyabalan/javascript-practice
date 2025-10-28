@@ -127,3 +127,12 @@ console.log(
   `10. Remove a Given Character from a String ${str}:`,
   remveCharFromSentence(str, removeChar)
 );
+
+function separateCharNum(str) {
+  const regEx = /^(\d+(\.\d+)?)([a-zA-z]+)$/;
+  const matchArr = str.match(regEx);
+  return { number: +matchArr[1], symbol: matchArr[matchArr.length - 1] };
+}
+
+str = '12CR';
+console.log(`11. Separate Number from String ${str}:`, separateCharNum(str));
