@@ -69,3 +69,17 @@ console.log(
 // 6. Reverse Words in a Sentence
 str = 'Edit in StackBlitz next generation editor';
 console.log(`Reverse Words in a Sentence ${str}:`, reverseStr(str));
+
+// 7. Check if Two Strings are Anagrams
+function checkAnagrams(str1, str2) {
+  const fStr = str1.split('');
+  const sStr = str2.split('');
+  if (fStr.length !== sStr.length) return false;
+  return sStr.every((a) => fStr.indexOf(a) >= 0);
+}
+str1 = 'STOP';
+str2 = 'POST';
+console.log(
+  `if Two Strings are Anagrams ${str1} and  ${str2}:`,
+  checkAnagrams(str1, str2)
+);
