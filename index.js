@@ -50,13 +50,18 @@ console.log(
   `Find the First Non-Repeating Character  ${str}: ${firstNonRepeatChar(str)}`
 );
 
-//5. Count the Occurrences of Each Character 
+//5. Count the Occurrences of Each Character
 function charOccurrences(input) {
+  const arry = input.toLowerCase().split('');
+  return arry.reduce((acc, value) => {
+    if (!acc[value]) acc[value] = 1;
+    else acc[value] = acc[value] += 1;
 
+    return acc;
+  }, {});
 }
-str = 'aabc';
+str = 'aasee';
 console.log(
-  `Count the Occurrences of Each Character   ${str}: ${charOccurrences(str)}`
+  `Count the Occurrences of Each Character ${str}:`,
+  charOccurrences(str)
 );
-
-
