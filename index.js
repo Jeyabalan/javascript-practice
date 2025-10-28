@@ -111,3 +111,19 @@ function titleCase(str) {
 
 str = 'jeyabalan';
 console.log(`9. Convert a String to Title Case  ${str}:`, titleCase(str));
+
+// 10. Remove a Given Character from a String
+function remveCharFromSentence(str, removeChar) {
+  const array = str.split('');
+  return array.reduce((acc, val) => {
+    if (val !== removeChar) acc += val;
+    return acc;
+  }, '');
+}
+
+str = 'jeyabalan';
+const removeChar = 'a';
+console.log(
+  `10. Remove a Given Character from a String ${str}:`,
+  remveCharFromSentence(str, removeChar)
+);
