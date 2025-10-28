@@ -8,14 +8,14 @@ function reverseStr(input) {
   // return input.toLowerCase().split('').reverse().join('');
 }
 
-console.log(`Reverse a String: ${reverseStr('Hi hello')}`);
+console.log(`1. Reverse a String: ${reverseStr('Hi hello')}`);
 // 2. Check if a String is a Palindrome
 function palindrome(input) {
   const reverseString = reverseStr(input);
   return reverseString === input.toLowerCase();
 }
 let str = 'Hiih';
-console.log(`Check if a ${str} is a Palindrome: ${palindrome(str)}`);
+console.log(`2. Check if a ${str} is a Palindrome: ${palindrome(str)}`);
 
 // 3. Remove Duplicates from a String
 function revmoveDuplicates(input) {
@@ -32,7 +32,7 @@ function revmoveDuplicates(input) {
 }
 // str = 'Jeyabalan'
 str = [1, 1, 2, 3, 5, 5, 5];
-console.log(`Remove Duplicates from ${str}: ${revmoveDuplicates(str)}`);
+console.log(`3. Remove Duplicates from ${str}: ${revmoveDuplicates(str)}`);
 
 // 4. Find the First Non-Repeating Character
 function firstNonRepeatChar(input) {
@@ -47,7 +47,9 @@ function firstNonRepeatChar(input) {
 }
 str = 'aabc';
 console.log(
-  `Find the First Non-Repeating Character  ${str}: ${firstNonRepeatChar(str)}`
+  `4. Find the First Non-Repeating Character  ${str}: ${firstNonRepeatChar(
+    str
+  )}`
 );
 
 //5. Count the Occurrences of Each Character
@@ -62,13 +64,13 @@ function charOccurrences(input) {
 }
 str = 'aasee';
 console.log(
-  `Count the Occurrences of Each Character ${str}:`,
+  `5. Count the Occurrences of Each Character ${str}:`,
   charOccurrences(str)
 );
 
 // 6. Reverse Words in a Sentence
 str = 'Edit in StackBlitz next generation editor';
-console.log(`Reverse Words in a Sentence ${str}:`, reverseStr(str));
+console.log(`6. Reverse Words in a Sentence ${str}:`, reverseStr(str));
 
 // 7. Check if Two Strings are Anagrams
 function checkAnagrams(str1, str2) {
@@ -80,7 +82,7 @@ function checkAnagrams(str1, str2) {
 str1 = 'STOP';
 str2 = 'POST';
 console.log(
-  `if Two Strings are Anagrams ${str1} and  ${str2}:`,
+  `7. if Two Strings are Anagrams ${str1} and  ${str2}:`,
   checkAnagrams(str1, str2)
 );
 
@@ -90,7 +92,6 @@ function longestStrWithoutRepeat(input) {
     .split(' ')
     .map((a) => a.toLowerCase())
     .sort((a, b) => b.length - a.length);
-  console.log(array);
   for (let word of array) {
     if (firstNonRepeatChar(word)) return word;
   }
@@ -98,6 +99,15 @@ function longestStrWithoutRepeat(input) {
 
 str = 'jeyabalan Hii more test with';
 console.log(
-  `Find the Longest Substring Without Repeating Characters ${str}:`,
+  `8. Find the Longest Substring Without Repeating Characters ${str}:`,
   longestStrWithoutRepeat(str)
 );
+
+// 9. Convert a String to Title Case
+function titleCase(str) {
+  const firstLetter = str.at(0);
+  return firstLetter.toUpperCase() + str.substring(1, str.length);
+}
+
+str = 'jeyabalan';
+console.log(`9. Convert a String to Title Case  ${str}:`, titleCase(str));
