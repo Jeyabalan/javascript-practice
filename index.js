@@ -65,3 +65,7 @@ console.log(
   `Count the Occurrences of Each Character ${str}:`,
   charOccurrences(str)
 );
+
+// 6. Reverse Words in a Sentence
+str = 'Edit in StackBlitz next generation editor';
+console.log(`Reverse Words in a Sentence ${str}:`, reverseStr(str));
