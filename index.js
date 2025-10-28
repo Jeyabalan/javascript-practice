@@ -51,4 +51,12 @@ console.log(
 );
 
 //5. Count the Occurrences of Each Character 
-function 
+function charOccurrences(input) {
+
+}
+str = 'aabc';
+console.log(
+  `Count the Occurrences of Each Character   ${str}: ${charOccurrences(str)}`
+);
+
+
