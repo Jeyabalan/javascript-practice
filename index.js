@@ -141,8 +141,18 @@ function factorial(number) {
   if (number === 1) return number;
   return number * factorial(number - 1);
 }
-const number = 4;
+let number = 4;
 console.log(
   `11. Javascript program to Find the factorial of ${number} ?`,
   factorial(number)
+);
+
+function consecutiveNumber(number) {
+  return array.filter((val) => val === number).length;
+}
+number = 1;
+let array = [1, 1, 9, 1, 9, 9, 19, 7, 1, 1, 1, 3, 2, 5, 1];
+console.log(
+  `12. Javascript program to Find the max count of consecutive ${number}’s in an array [${array}] ?`,
+  consecutiveNumber(number)
 );
