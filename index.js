@@ -136,3 +136,13 @@ function separateCharNum(str) {
 
 str = '12CR';
 console.log(`11. Separate Number from String ${str}:`, separateCharNum(str));
+
+function factorial(number) {
+  if (number === 1) return number;
+  return number * factorial(number - 1);
+}
+const number = 4;
+console.log(
+  `11. Javascript program to Find the factorial of ${number} ?`,
+  factorial(number)
+);
