@@ -156,3 +156,25 @@ console.log(
   `12. Javascript program to Find the max count of consecutive ${number}’s in an array [${array}] ?`,
   consecutiveNumber(number)
 );
+
+function countCharacter(str) {
+  const array = str.split('');
+  const uniqueArr = array
+    .reduce((acc, cur, index) => {
+      if (array.lastIndexOf(cur) === index && acc.indexOf(cur) === -1)
+        acc.push(cur);
+      return acc;
+    }, [])
+    .sort();
+
+  return uniqueArr.reduce((acc, cur) => {
+    acc += array.filter((val) => val === cur).length + cur;
+    return acc;
+  }, '');
+}
+str = 'abbcccddddeea';
+console.log(
+  `13. Write a program to get below output from given input ? I/P: ${str} ?`,
+  countCharacter(str)
+);
+//1a2b3c4d2e1a
