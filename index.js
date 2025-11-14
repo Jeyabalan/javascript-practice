@@ -195,3 +195,16 @@ function flat(arr) {
 
 const unFlatArray = [1, [2], [3, [4, 5, { a: 6 }], { b: 7 }, [8, [9, 10]]]]
 console.log(`14. Flattern Array without using any in build method, ${String(unFlatArray)}`, flat(unFlatArray))
+
+function notes(amount) {
+  let currentAmount = amount;
+  return currencyArray.reduce((acc, cur) => {
+    if (!acc[cur]) acc[cur] = 0;
+    acc[cur] = Math.floor(currentAmount / cur);
+    currentAmount -= acc[cur] * cur;
+    return acc;
+  }, {});
+}
+const currencyArray = [500, 200, 100, 50, 20, 10, 5, 2, 1];
+const amount = 1358
+console.log(`16. Find out how many notes are there in the amount: Rs. ${amount}`, notes(amount));
