@@ -178,3 +178,20 @@ console.log(
   countCharacter(str)
 );
 //1a2b3c4d2e1a
+
+function flat(arr) {
+  let flatArray = [];
+  for (let val of arr) {
+    if (Array.isArray(val)) {
+      flatArray.push(...flat(val));
+    } else if (typeof val === 'object' && Object.keys(val).length > 0) {
+      flatArray.push(...flat(Object.values(val)))
+    } else {
+      flatArray.push(val);
+    }
+  }
+  return flatArray;
+}
+
+const unFlatArray = [1, [2], [3, [4, 5, { a: 6 }], { b: 7 }, [8, [9, 10]]]]
+console.log(`14. Flattern Array without using any in build method, ${String(unFlatArray)}`, flat(unFlatArray))
