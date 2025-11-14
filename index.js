@@ -208,3 +208,25 @@ function notes(amount) {
 const currencyArray = [500, 200, 100, 50, 20, 10, 5, 2, 1];
 const amount = 1358
 console.log(`16. Find out how many notes are there in the amount: Rs. ${amount}`, notes(amount));
+
+function expandCurrency(amount) {
+  const regx = /^(\d+)(\.\d+)?([a-zA-Z]+)$/;
+  const matches = amount.match(/^(\d+)(\.\d+)?([a-zA-Z]+)$/);
+  const numericAmount = matches[2] ? matches[1] + matches[2] : matches[1];
+  const currencyText = matches[matches.length - 1];
+  let multiply = 0;
+  switch (currencyText.toUpperCase()) {
+    case 'CR':
+      multiply = 10000000;
+      break;
+    case 'L':
+      multiply = 100000;
+      break;
+    case 'K':
+      multiply = 10000;
+      break;
+  }
+  return numericAmount * multiply;
+}
+//ex: 20K -> 20,000, 1L -> 1,00,000
+console.log(`Currency Conversion`, expandCurrency('20K'));
